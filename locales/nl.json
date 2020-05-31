@@ -1,0 +1,17 @@
+{
+  "pair": {
+    "title": "Dru haard toevoegen",
+    "nosettings": "Vul a.u.b. alle verplichte velden in.",
+    "intro": "Voer het IP adres, het poortnummer en de polling frequentie in van je Dru controller.",
+    "address": "IP adres",
+    "port": "Poort",
+    "polling": "Polling frequentie",
+    "connect": "Verbind"
+  },
+  "Unreachable": "Onbereikbaar",
+  "Off": "Uit",
+  "Standby": "Batterij standby",
+  "Charge": "Batterij opladen",
+  "Discharge": "Batterij ontladen",
+  "NA": "Informatie niet beschikbaar"
+}

@@ -1,0 +1,28 @@
+{
+  "name": "com.amstelzone.dru",
+  "version": "0.0.1",
+  "description": "Control the Dru Fireplace through the modbus protocol",
+  "main": "app.js",
+  "dependencies": {
+    "jsmodbus": "^3.1.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arnodev/com.amstelzone.dru"
+  },
+  "keywords": [
+    "DRU",
+    "Fireplace",
+    "Modbus"
+  ],
+  "author": "Arno van Beek",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arnodev/com.amstelzone.dru/issues"
+  },
+  "homepage": "https://github.com/arnodev/com.amstelzone.dru"
+}

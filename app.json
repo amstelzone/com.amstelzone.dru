@@ -1,0 +1,179 @@
+{
+	"id": "com.amstelzone.dru",
+	"sdk": 2,
+  "brandColor": "#df001c",
+	"name": {
+		"en": "Dru fireplace control",
+		"nl": "Dru haard aansturing"
+	},
+	"tags": {
+		"en": [ "Dru", "fireplace", "control" ],
+		"nl": [ "Dru", "haard", "aansturing" ]
+	},
+	"version": "0.0.1",
+	"compatibility": ">=3.0.0",
+	"author": {
+		"name": "Arno van Beek",
+		"email": "arno@arno.net",
+		"website": "https://github.com/arnodev/com.amstelzone.dru"
+	},
+	"contributing": {
+		"donate": {
+			"paypal": {
+				"username": "arnodev"
+			}
+		}
+	},
+	"bugs": {
+		"url": "https://github.com/arnodev/com.amstelzone.dru/issues"
+	},
+  "homeyCommunityTopicId": 1,
+	"images": {
+		"large": "./assets/images/large.png",
+		"small": "./assets/images/small.png"
+	},
+	"category": "climate",
+	"description": {
+		"en": "Control Dru Fireplace through the modbus protocol",
+		"nl": "Bestuur de Dru gashaard via modbus protocol"
+	},
+	"dependencies": {
+		"net": "*"
+	},
+  "capabilities": {
+  },
+	"drivers": [
+		{
+			"id": "dru",
+			"name": {
+				"en": "Dru fireplace controller",
+				"nl": "Dru gashaard aanstuurder"
+			},
+			"images": {
+				"large": "drivers/dru/assets/images/large.jpg",
+				"small": "drivers/dru/assets/images/small.jpg"
+			},
+			"class": "heater",
+			"capabilities": [
+        "onoff",
+				"dim",
+        "measure_temperature"
+			],
+			"pair": [
+				{
+					"id": "start"
+				}
+			],
+			"settings": [
+				{
+					"type": "group",
+					"label": {
+						"en": "Controller settings",
+						"nl": "Controller instellingen"
+					},
+					"children": [
+						{
+							"id": "address",
+							"type": "text",
+							"value": "0.0.0.0",
+							"label": {
+								"en": "IP Address",
+								"nl": "IP adres"
+							}
+						},
+						{
+							"id": "port",
+							"type": "number",
+							"value": 502,
+							"step": 1,
+							"label": {
+								"en": "Port",
+								"nl": "Poort"
+							}
+						},
+						{
+							"id": "polling",
+							"type": "number",
+							"value": 5,
+							"step": 1,
+							"attr": {
+								"min": 2,
+								"max": 3600
+							},
+							"label": {
+								"en": "Polling",
+								"nl": "Polling"
+							}
+						}
+					]
+				}
+			]
+		}
+	],
+  "flow": {
+    "triggers": [
+
+    ],
+    "conditions": [
+      {
+        "id": "isOperationalStatus",
+        "title": {
+          "en": "Operation status !{{is|is not}}",
+          "nl": "Operationele status !{{is|is niet}}"
+        },
+        "args": [
+          {
+            "name": "status",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "303",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+              },
+              {
+                "id": "2291",
+                "label": {
+                  "en": "Battery Standby",
+                  "nl": "Batterij standby"
+                }
+              },
+              {
+                "id": "2292",
+                "label": {
+                  "en": "Battery Charging",
+                  "nl": "Batterij opladen"
+                }
+              },
+              {
+                "id": "2293",
+                "label": {
+                  "en": "Battery Discharging",
+                  "nl": "Batterij ontladen"
+                }
+              },
+              {
+                "id": "16777213",
+                "label": {
+                  "en": "Information Not Available",
+                  "nl": "Informatie Niet Beschikbaar"
+                }
+              }
+            ]
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "placeholder": {
+              "en": "Select Sunny Boy Storage",
+              "nl": "Selecteer  Sunny Boy Storage"
+            },
+            "filter": "driver_id=storage"
+	        }
+        ]
+      }
+	  ]
+  }
+}

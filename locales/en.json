@@ -1,0 +1,17 @@
+{
+  "pair": {
+    "title": "Add Dru Controller",
+    "nosettings": "Please fill in all the required fields.",
+    "intro": "Enter the IP address, port number and polling frequentie of your Dru Controller.",
+    "address": "IP Address",
+    "port": "Port",
+    "polling": "Polling Frequency",
+    "connect": "Connect"
+  },
+  "Unreachable": "Unreachable",
+  "Off": "Off",
+  "Standby": "Battery Standby",
+  "Charge": "Battery Charging",
+  "Discharge": "Battery Discharging",
+  "NA": "Information Not Available"
+}
